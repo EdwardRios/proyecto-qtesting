@@ -9,14 +9,38 @@
 <body>
     <h3>Billetera </h3>
         <p>Adicionar</p>
-        <input type="number" name="nombre" min=1>        
-        <input type="button" value="Enviar">
+        <input id="add" type="number" name="nombre" min=1>        
+        <button id="button-add" value="Enviar">Enviar</button>
         <p>Sustraer</p>
-        <input type="number" name="nombre" min=1>        
-        <input type="button" value="Enviar">
+        <input id="reduce" type="number" name="nombre" min=1>        
+        <button id="button-reduce" value="Enviar">Enviar</button>
+    <script>
+        
+            var valueAdd = document.getElementById("add").value
+                document.getElementById("button-add").addEventListener('click',postRequest('http://localhost:8000/add.php', {funds: 200})
+                .then(data => console.log(data)) // Result from the `response.json()` call
+              );
+            //console.log(valueAdd);
+                // document.getElementById("button-add").addEventListener('click' , alert())
+                // //postFormData('http://example.com/api/v1/users', {user: 'Mary'})
+              
+            
+                    
+            
+                function postRequest(url, data) {
+                return fetch(url, {
+                    credentials: 'same-origin', // 'include', default: 'omit'
+                    mode: 'no-cors',
+                    method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
+                    body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
+                    headers: new Headers({
+                    'Content-Type': 'application/json'
+                    }),
+                })
+                .then(response => console.log('yiyi'))
+                }
+                  
+    </script>    
 </body>
 </html>
 
-<script>
-
-</script>
