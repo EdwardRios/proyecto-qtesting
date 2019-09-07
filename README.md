@@ -9,7 +9,9 @@ Una vez clonado el repositorio, abrir la consola dentro de la carpeta "server" y
 
 Dentro de la consola para ejecutar las pruebas unitarias se utilizar el comando "vendor/bin/phpunit" (sin comillas)
 
-Instalar las dependencias de Node en la consola del proyecto con la instruccion : "npm install"
+Para levantar el servidor ejecutar el siguiente comando en la direccion "server/app" : "php -S localhost:8000" (sin comillas)
+
+Instalar las dependencias de Node en la consola del proyecto con la instruccion : "npm install" (sin comillas)
 
 Para ingresar a la UI abrir el archivo form.html
 
