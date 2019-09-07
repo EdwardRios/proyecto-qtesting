@@ -11,18 +11,19 @@
         <p>Adicionar</p>
         <input id="add" type="number" name="nombre" min=1>        
         <button id="button-add" value="Enviar">Enviar</button>
+        <label id="label-monto" for=""></label>
         <p>Sustraer</p>
         <input id="reduce" type="number" name="nombre" min=1>        
         <button id="button-reduce" value="Enviar">Enviar</button>
     <script>
         
             var valueAdd = document.getElementById("add").value
-                document.getElementById("button-add").addEventListener('click',postRequest('http://localhost:8000/add.php', {funds: 200})
-                .then(data => console.log(data)) // Result from the `response.json()` call
-              );
-            //console.log(valueAdd);
-                // document.getElementById("button-add").addEventListener('click' , alert())
-                // //postFormData('http://example.com/api/v1/users', {user: 'Mary'})
+            //     document.getElementById("button-add").addEventListener('click',postRequest('http://localhost:8000/add.php', {funds: valueAdd})
+            //     .then(data => console.log(data)) // Result from the `response.json()` call
+            //   );
+            console.log(valueAdd);
+                document.getElementById("button-add").addEventListener('click' , postRequest('http://localhost:8000/add.php',valueAdd))
+                //postFormData('http://example.com/api/v1/users', {user: 'Mary'})
               
             
                     
@@ -39,7 +40,9 @@
                 })
                 .then(response => console.log('yiyi'))
                 }
-                  
+
+        
+              
     </script>    
 </body>
 </html>
