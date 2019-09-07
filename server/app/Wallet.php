@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+
 
 class Wallet {
     private $funds;
@@ -27,9 +27,3 @@ class Wallet {
     }
     
 }
-
-
-/*$test = new Wallet(2);
-$test->addFunds(600);
-echo $test->getFunds();
-echo "\n";*/

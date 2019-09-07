@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use App\Wallet;
+include_once 'app/Wallet.php';
 
 class WalletTest extends TestCase{
     public function testWalletInitial(){
