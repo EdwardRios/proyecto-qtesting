@@ -1,18 +1,42 @@
 # proyecto-qtesting
+Proyecto Final para el modulo de PRUEBAS DE SOFTWARE – QTESTING
+
 Desarrollado en PHP utilizando PHPUnit para las pruebas unitarias, para ejecutarlo hay que tener instalado :
 
-PHP Version 7 o superior
+- PHP Version 7 o superior
+- MYSQL
+- Composer
 
-Composer
+Una vez clonado el repositorio, abrir la consola dentro de la carpeta "server" y ejecutar el comando: 
+```
+composer update 
+```
+Una vez instalados los componentes necesarios , se procedera creacion de una Base de Datos MySql llamado "proyectofinal" y dentro de ella se ejecutara el script "proyectofinal.sql" que se encuentra el repositorio.
 
-Una vez clonado el repositorio, abrir la consola dentro de la carpeta "server" y ejecutar el comando "composer update" (sin comillas) para instalar los componentes necesarios
+Realizar las configuraciones respectiva para la conexion de la BD en "server/app/DB.php"
 
-Dentro de la consola para ejecutar las pruebas unitarias se utilizar el comando "vendor/bin/phpunit" (sin comillas)
+# Pruebas Unitarias
 
-Para levantar el servidor ejecutar el siguiente comando en la direccion "server/app" : "php -S localhost:8000" (sin comillas)
+Dentro de la consola dirigirse a la direccion "server" del repositorio, para ejecutar las pruebas unitarias utilizar el comando 
+```
+vendor/bin/phpunit 
+```
+# Pruebas Integracion, UI
 
-Instalar las dependencias de Node en la consola del proyecto con la instruccion : "npm install" (sin comillas)
+Para levantar el servidor ejecutar en la consola el siguiente comando en la direccion "server/app" : 
+```
+php -S localhost:8000
+```
+Con la consola en la raiz del proyecto para instalar las dependencias de Node con la instruccion : 
+```
+npm install
+```
+Para ingresar a la UI una vez levantado el servidor en la siguiente direccion :
+```
+http://localhost:8000/formulario.php
+```
 
-Para ingresar a la UI abrir el archivo form.html
-
-Para ejecutar las pruebas ejecutar la consola en la raiz del proyecto con la instruccion : "./node_modules/.bin/cucumber-js" (sin comillas)
+Para ejecutar las pruebas ejecutar la consola en la raiz del proyecto con la instruccion:
+```
+./node_modules/.bin/cucumber-js
+```
