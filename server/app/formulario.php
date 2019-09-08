@@ -14,7 +14,20 @@
         <button id="button-add" value="Enviar">Adicionar</button>               
         <button id="button-reduce" value="Enviar">Sustraer</button>
         <h3 id="message"></h3>
-    <script>                             
+    <script>
+        fetch('http://localhost:8000')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
+                document.getElementById("funds").innerHTML = data.funds
+            });
+            
+            //     document.getElementById("button-add").addEventListener('click',postRequest('http://localhost:8000/add.php', {funds: valueAdd})
+            //     .then(data => console.log(data)) // Result from the `response.json()` call
+            //   );
+            //console.log(valueAdd);
                 document.getElementById("button-add").addEventListener('click' , function(){
                     var valueAdd = document.getElementById("value").value
                     postAddRequest('http://localhost:8000/add.php',{ funds: valueAdd})
@@ -24,14 +37,19 @@
                     postReduceRequest('http://localhost:8000/reduce.php',{ funds: valueAdd})
                 })
               
-                                        
+            
+                    
+            
                 function postAddRequest(url, data) {
                     const searchParams = Object.keys(data).map((key) => {
                     return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
                     }).join('&');
-                    return fetch(url, {                                      
-                    method: 'POST',                     
-                    headers: {                        
+                    return fetch(url, {
+                    //credentials: 'same-origin', // 'include', default: 'omit'                   
+                    method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
+                    //body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
+                    headers: {
+                        //'Accept' : 'application/json',
                         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
                     },
                     body: searchParams,
@@ -44,14 +62,16 @@
                     console.log(data.actualFunds)
                 })            
                 }   
-
                 function postReduceRequest(url, data) {
                     const searchParams = Object.keys(data).map((key) => {
                     return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
                     }).join('&');
-                    return fetch(url, {                    
-                    method: 'POST', // 'GET', 'PUT', 'DELETE', etc.                    
-                    headers: {                        
+                    return fetch(url, {
+                    //credentials: 'same-origin', // 'include', default: 'omit'                   
+                    method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
+                    //body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
+                    headers: {
+                        //'Accept' : 'application/json',
                         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
                     },
                     body: searchParams,
